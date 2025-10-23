@@ -239,3 +239,43 @@ article.is-visible {
     opacity: 1; /* Kembali normal */
     transform: translateY(0); /* Kembali ke posisi semula */
 }
+
+/* --- Responsiveness Dasar --- */
+
+/* Aturan untuk layar berukuran 768px atau lebih kecil (Tablet) */
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    
+    /* Mengurangi margin & padding agar tidak terlalu makan tempat */
+    header, section, footer {
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+/* Aturan untuk layar berukuran 480px atau lebih kecil (Ponsel) */
+@media (max-width: 480px) {
+    header img {
+        /* Mengecilkan foto profil di HP */
+        width: 150px;
+        height: 150px;
+    }
+    
+    /* Mengecilkan ukuran font judul */
+    h1 { font-size: 1.8em; }
+    h2 { font-size: 1.4em; }
+    
+    /* Menyesuaikan ukuran font paragraf agar pas */
+    p { 
+        font-size: 0.95em; 
+        text-align: left; /* Teks rata kiri lebih mudah dibaca di HP */
+    }
+}
+
+/* Sembunyikan wisp di perangkat mobile (yang tidak punya kursor) */
+@media (max-width: 768px) {
+    .magic-wisp {
+        display: none; /* Efek kursor disembunyikan */
+    }
+}
