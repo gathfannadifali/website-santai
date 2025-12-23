@@ -45,5 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
     elementsToReveal.forEach(el => {
         observer.observe(el);
     });
+    const music = document.getElementById('bg-music');
+    const toggleBtn = document.getElementById('music-toggle-btn');
+    
+    // Setel volume agar tidak terlalu keras (0.0 sampai 1.0)
+    music.volume = 0.3; // 30% volume
 
+    toggleBtn.addEventListener('click', () => {
+        // Cek apakah musik sedang dijeda (paused)
+        if (music.paused) {
+            music.play();
+            toggleBtn.textContent = '🔇'; // Ganti ikon ke 'mute'
+        } else {
+            music.pause();
+            toggleBtn.textContent = '🎵'; // Ganti ikon ke 'play'
+        }
+    });
+    
 });
